@@ -1,27 +1,61 @@
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 
 function Logo() {
 
     return (
-        <Wrapper>
-            <M />
-            <L />
-        </Wrapper>
+        <Border>
+            <Wrapper>
+                <M />
+                <L />
+            </Wrapper>
+        </Border>
+
     )
 }
 
 export default Logo;
 
-const Wrapper = styled.div`
+const BeatingAnimation = keyframes`
+    50% { box-shadow: 0 0 9px black; }
+`
+
+const Border = styled.div`
     margin-top: 10px;
     margin-left: 10px;
 
+    border: 5px double white;
+    width: 170px;
+    height: 170px;
+
+    display: grid;
+
+    :hover {
+        border: 5px double #423F3F;
+        box-shadow: 0 0 5px black;
+
+        animation: ${BeatingAnimation} .5s infinite;
+
+        * {
+            background-color: inherit;
+            color: #423F3F;
+        }
+    }
+        
+    transition: all .5s;
+`
+
+
+const Wrapper = styled.div`
+ 
     width: 150px;
     height: 150px;    
+    margin: auto;
 
     background-color: #423F3F;
     font-family: 'Inter', sans-serif;
     position: relative;
+
+  
 `
 
 const M = styled.div`
@@ -31,11 +65,13 @@ const M = styled.div`
     line-height: 149px;
 
     color: white;
-
+    
     ::before {
         content: "M";
         font-size: 116px;
     }
+
+   
 `
 
 const L = styled.div`
@@ -52,5 +88,6 @@ const L = styled.div`
         
     }
 
+ 
 
 `
