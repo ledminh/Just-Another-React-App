@@ -17,30 +17,39 @@ const Wrapper = styled.div`
     margin-left: 10px;
 
     width: 150px;
-    
+    height: 150px;    
 
     background-color: #423F3F;
     font-family: 'Inter', sans-serif;
-
+    position: relative;
 `
 
 const M = styled.div`
-    display: inline-block;
-    width: 50%;
+    position: absolute;
+    left: -7px;
+    top: -33px;
+    line-height: 149px;
+
+    color: white;
+
     ::before {
         content: "M";
-        font-size: 120px;
+        font-size: 116px;
     }
 `
 
 const L = styled.div`
-    display: inline-block;
-    width: 50%;
+    position: absolute;
+    bottom: -67px;
+    right: -4px;
+    line-height: 143px;
+    color: white;
+
     ::before {
         content: "L";
-        font-size: 120px;
-
-        color: blue;
+        font-size: 118px;
+        font-weight: 800;
+        
     }
 
 
