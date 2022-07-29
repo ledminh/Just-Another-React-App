@@ -2,11 +2,16 @@ import './style.css';
 
 import { render } from 'react-dom';
 
-import Logo from './Logo';
+import Header from './Header';
 
 function App() {
 
-    return <Logo />
+    return (
+        <>
+            <Header/>
+        </>
+        
+    );
 }
 
 

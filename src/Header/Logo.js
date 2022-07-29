@@ -3,12 +3,12 @@ import styled, {keyframes} from 'styled-components';
 function Logo() {
 
     return (
-        <Border>
-            <Wrapper>
-                <M />
-                <L />
-            </Wrapper>
-        </Border>
+            <Border>
+                <Wrapper>
+                    <M />
+                    <L />
+                </Wrapper>
+            </Border>
 
     )
 }
@@ -19,11 +19,10 @@ const BeatingAnimation = keyframes`
     50% { box-shadow: 0 0 9px black; }
 `
 
-const Border = styled.div`
-    margin-top: 10px;
-    margin-left: 10px;
 
-    border: 5px double white;
+const Border = styled.div`
+    border: 5px double #756e6e;
+    border-radius: 20px;
     width: 170px;
     height: 170px;
 
@@ -64,7 +63,7 @@ const M = styled.div`
     top: -33px;
     line-height: 149px;
 
-    color: white;
+    color: #756e6e;
     
     ::before {
         content: "M";
@@ -79,7 +78,7 @@ const L = styled.div`
     bottom: -67px;
     right: -4px;
     line-height: 143px;
-    color: white;
+    color: #756e6e;
 
     ::before {
         content: "L";
