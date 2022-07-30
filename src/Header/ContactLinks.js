@@ -38,9 +38,10 @@ function ContactLinks () {
     return (
         <>
             <Wrapper>
-                <Li><a href="https://www.linkedin.com/in/ledminh/"><i className="fa fa-linkedin"/></a></Li>
-                <Li><a href="https://github.com/ledminh"><i className="fa fa-github"/></a></Li>
+                <Li rotateDeg={Math.random()*100 -20}><a href="https://www.linkedin.com/in/ledminh/"><i className="fa fa-linkedin"/></a></Li>
+                <Li rotateDeg={Math.random()*100 -20}><a href="https://github.com/ledminh"><i className="fa fa-github"/></a></Li>
                 <Li 
+                    rotateDeg={Math.random()*10 -20}
                     onClick={emailHandle}
                     >
                         <i
@@ -98,6 +99,7 @@ const Li = styled.li`
     margin-bottom: .5rem;
     text-align: center;
     cursor: pointer;
+
     i {
         font-size: 1.5rem;
         border-radius: 50%;
@@ -105,5 +107,13 @@ const Li = styled.li`
 
         background-color: #2e2b2b;
         color: gray;
+
+        :hover {
+            box-shadow: 0 0 3px black;
+            background-color: #403b3b;
+            transform: rotateZ(${props => props.rotateDeg}deg);
+        }
+
+        transition: all .4s;
     }
 `
