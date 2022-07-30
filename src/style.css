@@ -16,5 +16,13 @@ p {
 }
 
 a {
-    
+    color: #541313;
+    font-weight: 600;
+
+    padding: .2rem;
+
+}
+
+a:hover {   
+    background-color: #756e6e;
 }
