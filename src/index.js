@@ -8,6 +8,7 @@ import Header from './Header';
 import SectionFrame from './SectionFrame';
 
 import { Helmet } from 'react-helmet';
+import AboutMe, {AboutMeStyle} from './Sections/AboutMe';
 
 function App() {
 
@@ -22,7 +23,10 @@ function App() {
                 <Header/>
                 <SectionFrame 
                     title="About Me"
-                    />
+                    additionalStyle={AboutMeStyle}
+                    >
+                        <AboutMe/>
+                </SectionFrame>
             </Wrapper>
         </>
         
