@@ -19,8 +19,7 @@ export default Header;
 const Wrapper = styled.header`
     display: flex;
 
-    margin-top: 5px;
-    margin-left: 5px;
+    
 
    
 `
