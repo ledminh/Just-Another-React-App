@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import styled from 'styled-components';
 
 import Header from './Header';
-import Section from './Section';
+import SectionFrame from './SectionFrame';
 
 import { Helmet } from 'react-helmet';
 
@@ -20,7 +20,7 @@ function App() {
             </Helmet>
             <Wrapper>
                 <Header/>
-                <Section 
+                <SectionFrame 
                     title="About Me"
                     />
             </Wrapper>

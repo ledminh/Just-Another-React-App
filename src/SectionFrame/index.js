@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 import { useState } from 'react';
 
 
-function Section ({title, additionalStyle}) {
+function SectionFrame ({title, additionalStyle}) {
     const [show, setShow] = useState(false);
 
     return (
@@ -37,7 +37,7 @@ function Section ({title, additionalStyle}) {
     )
 }
 
-export default Section;
+export default SectionFrame;
 
 const Wrapper = styled.section`
     border: 2px solid #756e6e;
