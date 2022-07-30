@@ -5,6 +5,8 @@ import { render } from 'react-dom';
 import styled from 'styled-components';
 
 import Header from './Header';
+import Section from './Section';
+
 import { Helmet } from 'react-helmet';
 
 function App() {
@@ -18,6 +20,9 @@ function App() {
             </Helmet>
             <Wrapper>
                 <Header/>
+                <Section 
+                    title="About Me"
+                    />
             </Wrapper>
         </>
         
@@ -29,7 +34,7 @@ const Wrapper  = styled.div`
     max-width: 1020px;
     margin: auto;
 
-    border: 2px solid red;
+    
 `
 
 render(<App />, document.querySelector("#container"));
