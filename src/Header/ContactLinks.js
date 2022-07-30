@@ -67,6 +67,7 @@ const ToolTip = styled.li`
     position: absolute;
 
     bottom: 0px;
+    right: 0px;
 
     font-size: .7rem;
     font-weight: 700;
@@ -77,9 +78,9 @@ const ToolTip = styled.li`
     
     ${
         props => props.visible? `
-        visibility: visible;
+        display: inline-box;
         `:
-        `visibility: hidden;`
+        `display: none;`
     }
 `
 
