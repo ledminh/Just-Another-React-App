@@ -16,7 +16,7 @@ function Header () {
 
 export default Header;
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
     display: flex;
 
     margin-top: 5px;

@@ -25,7 +25,7 @@ const Wrapper = styled.div`
 `
 
 
-const Line = styled.div`
+const Line = styled.p`
     font-size: 1.8rem;
     font-weight: 800;
     line-height: 3rem;
