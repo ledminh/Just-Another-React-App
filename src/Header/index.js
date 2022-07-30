@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Logo from './Logo';
 import Subtitle from './Subtitle';
+import ContactLinks from './ContactLinks';
 
 function Header () {
 
@@ -8,6 +9,7 @@ function Header () {
         <Wrapper>
             <Logo />
             <Subtitle />
+            <ContactLinks/>
         </Wrapper>
     )
 }
