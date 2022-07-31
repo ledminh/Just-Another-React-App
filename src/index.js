@@ -5,10 +5,12 @@ import { render } from 'react-dom';
 import styled from 'styled-components';
 
 import Header from './Header';
-import SectionFrame from './SectionFrame';
+import SectionFrame, {TITLE_VERT_CENTER, TITLE_HOR_CENTER} from './SectionFrame';
 
 import { Helmet } from 'react-helmet';
+
 import AboutMe, {AboutMeStyle} from './Sections/AboutMe';
+import Projects, {ProjectsStyle} from './Sections/Projects';
 
 function App() {
 
@@ -21,12 +23,24 @@ function App() {
             </Helmet>
             <Wrapper>
                 <Header/>
-                <SectionFrame 
-                    title="About Me"
-                    additionalStyle={AboutMeStyle}
-                    >
-                        <AboutMe/>
-                </SectionFrame>
+                <Body>
+                    <SectionFrame 
+                        title="About Me"
+                        titlePos={TITLE_VERT_CENTER}
+                        additionalStyle={AboutMeStyle}
+                        >
+                            <AboutMe/>
+                    </SectionFrame>
+
+                    <SectionFrame 
+                        title="Projects"
+                        titlePos={TITLE_HOR_CENTER}
+                        additionalStyle={ProjectsStyle}
+                        >
+                            <Projects/>
+                    </SectionFrame>
+                </Body>
+
             </Wrapper>
         </>
         
@@ -37,8 +51,14 @@ const Wrapper  = styled.div`
     width: 95%;
     max-width: 1020px;
     margin: auto;
-
     
+`
+
+const Body = styled.div`
+    position: relative;
+    
+    margin-top: 1rem;
+
 `
 
 render(<App />, document.querySelector("#container"));

@@ -1,9 +1,11 @@
 import styled, {css} from 'styled-components';
 import { useState } from 'react';
 
+export const TITLE_VERT_CENTER = "SECTIONFRAME/TITLE_VERT_CENTER";
+export const TITLE_HOR_CENTER = "SECTIONFRAME/TITLE_HOR_CENTER";
 
-function SectionFrame ({title, additionalStyle, children}) {
-    const [show, setShow] = useState(false);
+function SectionFrame ({title, titlePos, additionalStyle, children}) {
+    const [show, setShow] = useState(true);
 
     return (
         <Wrapper
@@ -14,6 +16,7 @@ function SectionFrame ({title, additionalStyle, children}) {
                 onClick={() => setShow(false)}
                 show={show}/>
             <Title
+                titlePos={titlePos}
                 onClick={() => setShow(true)}
                 show={show}
                 >
@@ -29,11 +32,13 @@ function SectionFrame ({title, additionalStyle, children}) {
 export default SectionFrame;
 
 const Wrapper = styled.section`
-    border: 2px solid #756e6e;
+    
+    z-index: 0;
 
     ${props => props.show && css`
-        border: 2px solid #302e2e;
+        box-shadow: 0 0 7px black;
         background-color: #999393;
+        z-index: 1000;
     `}
 
     border-radius: 20px;
@@ -74,7 +79,17 @@ const CloseButton = styled.button`
 
 const Title = styled.div`
     position: absolute;
-    top: calc(50% - 2.25rem);
+
+    ${
+        props => props.titlePos === TITLE_VERT_CENTER ? css`
+            top: calc(50% - 2.25rem);
+        `: props.titlePos === TITLE_HOR_CENTER? css`
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        `: ``
+    }
+
 
     font-size: 4.5rem;
     font-family: "Inter", sans-serif;
@@ -98,6 +113,14 @@ const Title = styled.div`
 
     
     transition: opacity .5s;
+
+    @media (max-width: 595px) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: 440px) {
+        font-size: 2rem;
+    }
 `
 
 const Body = styled.div`
@@ -115,5 +138,6 @@ const Body = styled.div`
     `}
 
     transition: opacity .5s;
+    
 
 `

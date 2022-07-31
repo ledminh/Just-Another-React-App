@@ -25,10 +25,11 @@ export default AboutMe;
 
 
 export const AboutMeStyle = css`
-    margin-top: 1rem;
+    
 
     width: 80%;
     max-width: 700px;
+    min-width: 270px;
 
 
 `
