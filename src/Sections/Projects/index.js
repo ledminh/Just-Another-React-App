@@ -14,7 +14,8 @@ function Projects() {
                         <Project
                             backgroundImg={pD.backgroundImg} 
                             title={pD.title} 
-                            description={pD.description} 
+                            description={pD.description}
+                            techs= {pD.techs}
                             githubLink={pD.githubLink} 
                             demoLink ={pD.demoLink}
                         />

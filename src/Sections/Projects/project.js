@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 
 import { useState } from 'react';
 
-function Project ({backgroundImg, title, description, githubLink, demoLink}) {
+function Project ({backgroundImg, title, description, techs, githubLink, demoLink}) {
     const [hover, setHover] = useState(false);
 
     return (
@@ -22,11 +22,18 @@ function Project ({backgroundImg, title, description, githubLink, demoLink}) {
             <Description hover={hover}>
                 {description}
             </Description>
+            <TechList hover={hover}>
+                {
+                    techs.map(t => (
+                        <li key={t.id}>{t.content}</li>
+                    ))
+                }
+            </TechList>
             <Links
                 hover={hover}
             >
-                <Li><a href={githubLink}>GITHUB</a></Li>
-                <Li><a href={demoLink}>DEMO</a></Li>
+                <li><a href={githubLink}>GITHUB</a></li>
+                <li><a href={demoLink}>DEMO</a></li>
             </Links>
         </Wrapper>
     )
@@ -104,11 +111,38 @@ const Description = styled.div`
         `
     }
 `
-
-const Links = styled.ul`
+const List = styled.ul`
     list-style-type: none;
-
     display: flex;
+`
+
+const TechList = styled(List)`
+    flex-flow: row wrap;
+    justify-content: center;
+
+    background-color: rgba(56, 48, 48, .7);
+
+    ${
+        props => props.hover && css`
+            background-color: rgb(56, 48, 48);
+        `
+    }
+
+    li {
+        font-size: .7rem;
+        margin-right: .4rem;
+        margin-bottom: .2rem;
+        color: #c2aeae;
+        background-color: rgba(20, 18, 18, .7);
+    
+        padding: .2rem;
+    }
+
+`
+
+
+const Links = styled(List)`
+    flex-flow: row nowrap;
     justify-content: space-around;
     
 
@@ -119,14 +153,11 @@ const Links = styled.ul`
             background-color: rgb(56, 48, 48);
         `
     }
-`
 
-const Li = styled.li`
-    a {
+
+    li a {
         font-size: .8rem;
-
         color: white;
     }
-    
-    
 `
+
